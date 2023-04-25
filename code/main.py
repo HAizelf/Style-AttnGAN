@@ -217,17 +217,17 @@ if __name__ == "__main__":
                         num_metrics += 1
                     print( '---> Frechet Inception Distance (FID): {:f}\n'.format( fid_value ) )
                 # compute PPL
-                if cfg.B_PPL:
-                    print( '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++' )
-                    print( 'Computing PPL...' )
-                    print( '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++' )
-                    print( f'Number of generated images to be used in PPL calculation: ~{cfg.PPL_NUM_SAMPLES}' )
-                    ppl_value = compute_ppl( evaluator, space = 'smart', num_samples = cfg.PPL_NUM_SAMPLES, eps = 1e-4, net = 'vgg' )
-                    with open( os.path.join( final_dir_g, 'metrics.txt' ), 'w' if num_metrics == 0 else 'a' ) as f:
-                        f.write( 'Perceptual Path Length (PPL): {:f}\n'.format( ppl_value ) )
-                        f.write( 'Root Directories for Datasets used in Calculation: {}\n\n'.format( root_dir_g ) )
-                        num_metrics += 1
-                    print( '---> Perceptual Path Length (PPL): {:f}\n'.format( ppl_value ) )
+                # if cfg.B_PPL:
+                #     print( '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++' )
+                #     print( 'Computing PPL...' )
+                #     print( '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++' )
+                #     print( f'Number of generated images to be used in PPL calculation: ~{cfg.PPL_NUM_SAMPLES}' )
+                #     ppl_value = compute_ppl( evaluator, space = 'smart', num_samples = cfg.PPL_NUM_SAMPLES, eps = 1e-4, net = 'vgg' )
+                #     with open( os.path.join( final_dir_g, 'metrics.txt' ), 'w' if num_metrics == 0 else 'a' ) as f:
+                #         f.write( 'Perceptual Path Length (PPL): {:f}\n'.format( ppl_value ) )
+                #         f.write( 'Root Directories for Datasets used in Calculation: {}\n\n'.format( root_dir_g ) )
+                #         num_metrics += 1
+                #     print( '---> Perceptual Path Length (PPL): {:f}\n'.format( ppl_value ) )
                 # # compute IS         # NOTE: See README.md for IS
                 # if cfg.B_IS:
                 #     print( '\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++' )
